@@ -63,6 +63,8 @@ html {
 
 body {
   box-sizing: border-box;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
   max-width: 1240px;
   padding: var(--vertical-gap) var(--horizontal-gap) 0;
   width: 100%;
