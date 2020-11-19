@@ -5,4 +5,13 @@ const RenderPosition = {
   AFTER_END: `afterend`
 };
 
-export {RenderPosition};
+const FilmsContainerTitle = {
+  'ALL': `All movies. Upcoming`,
+  'TOP_RATED': `Top rated`,
+  'MOST_COMMENTED': `Most commented`,
+};
+
+export {
+  RenderPosition,
+  FilmsContainerTitle,
+};
