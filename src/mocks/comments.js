@@ -2,12 +2,12 @@ import {v4 as uuidv4} from 'uuid';
 import {getRandomArrayItem, getRandomDate} from '../utils/common';
 
 const COMMENTS = [
-  `01 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, minus!`,
-  `02 Lorem ipsum dolor sit amet`,
-  `03 Lorem ipsum dolor sit amet, consectetur adipisicing elit.`,
-  `04 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate deleniti doloribus error illo.`,
-  `05 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate.`,
-  `06 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate deleniti.`,
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, minus!`,
+  `Lorem ipsum dolor sit amet`,
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit.`,
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate deleniti doloribus error illo.`,
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate.`,
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate deleniti.`,
 ];
 
 const EMOTIONS = [`smile`, `sleeping`, `puke`, `angry`];
