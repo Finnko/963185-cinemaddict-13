@@ -1,6 +1,15 @@
-const createFilmsListTemplate = (title, children, isExtra = false) => {
-  const {films, showMoreButton} = children;
+import {createFilmCardTemplate} from './film-card';
+import {createButtonShowMoreTemplate} from './button-show-more';
 
+const createFilmCardTemplates = (films) => {
+  if (!films.length) {
+    return `<h2 class="films-list__title">There are no movies in our database</h2>`;
+  }
+
+  return films.map(createFilmCardTemplate).join(`\n`);
+};
+
+const createFilmsListTemplate = (title, films, isShowMoreButton, isExtra = false) => {
   return (
     `<section class="${isExtra ? `films-list--extra` : `films-list`}">
       <h2 class="films-list__title ${isExtra ? `` : `visually-hidden`}">
@@ -8,10 +17,10 @@ const createFilmsListTemplate = (title, children, isExtra = false) => {
       </h2>
 
       <div class="films-list__container">
-        ${films}
+        ${createFilmCardTemplates(films)}
       </div>
 
-      ${isExtra ? `` : showMoreButton}
+      ${isShowMoreButton ? createButtonShowMoreTemplate() : ``}
     </section>`
   );
 };

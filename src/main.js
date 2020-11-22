@@ -5,34 +5,17 @@ import {createFilterTemplate} from './views/filter';
 import {createFooterTemplate} from './views/footer';
 import {createFilmsTemplate} from './views/films';
 import {createFilmsListTemplate} from './views/films-list';
-import {createFilmCardTemplate} from './views/film-card';
-import {createFilmsListShowMoreTemplate} from './views/films-list-show-more';
 
-import {totalFilmsAmount} from './mocks/films';
-import {createMockComments} from './mocks/comments';
-import {Config} from './constants/config';
+import {createMockFilms, totalFilmsAmount} from './mocks/films';
 import {FilmsContainerTitle, RenderPosition} from './constants/enums';
 import {render} from './utils/common';
+
+const FILMS_AMOUNT = 25;
 
 const headerElement = document.querySelector(`.header`);
 const mainElement = document.querySelector(`.main`);
 
-console.log(createMockComments(8));
-
-const filmsTemplate = createFilmsListTemplate(FilmsContainerTitle.ALL, {
-  films: createFilmCardTemplate().repeat(Config.FILM_CARDS_AMOUNT),
-  showMoreButton: createFilmsListShowMoreTemplate(),
-});
-
-const topRatedTemplate = createFilmsListTemplate(FilmsContainerTitle.TOP_RATED,
-    {films: createFilmCardTemplate().repeat(Config.EXTRA_FILM_CARDS_AMOUNT)},
-    true,
-);
-
-const mostCommentedTemplate = createFilmsListTemplate(FilmsContainerTitle.MOST_COMMENTED,
-  {films: createFilmCardTemplate().repeat(Config.EXTRA_FILM_CARDS_AMOUNT)},
-  true,
-);
+const filmsData = createMockFilms(FILMS_AMOUNT);
 
 render(headerElement, createProfileTemplate());
 render(mainElement, createNavigationTemplate());
@@ -44,9 +27,13 @@ render(mainElement, createSortingTemplate());
 render(mainElement, createFilmsTemplate());
 
 const filmsContainerElement = mainElement.querySelector(`.films`);
+const filmsTemplate = createFilmsListTemplate(FilmsContainerTitle.ALL, filmsData, true);
+const topRatedTemplate = createFilmsListTemplate(FilmsContainerTitle.TOP_RATED, filmsData, false, true);
+const mostCommentedTemplate = createFilmsListTemplate(FilmsContainerTitle.MOST_COMMENTED, filmsData, false, true);
+
 render(filmsContainerElement, filmsTemplate);
-render(filmsContainerElement, topRatedTemplate);
-render(filmsContainerElement, mostCommentedTemplate);
+// render(filmsContainerElement, topRatedTemplate);
+// render(filmsContainerElement, mostCommentedTemplate);
 
 render(document.body, createFooterTemplate(totalFilmsAmount));
 
