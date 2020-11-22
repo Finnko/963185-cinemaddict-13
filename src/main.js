@@ -8,12 +8,16 @@ import {createFilmsListTemplate} from './views/films-list';
 import {createFilmCardTemplate} from './views/film-card';
 import {createFilmsListShowMoreTemplate} from './views/films-list-show-more';
 
+import {totalFilmsAmount} from './mocks/films';
+import {createMockComments} from './mocks/comments';
 import {Config} from './constants/config';
 import {FilmsContainerTitle, RenderPosition} from './constants/enums';
 import {render} from './utils/common';
 
 const headerElement = document.querySelector(`.header`);
 const mainElement = document.querySelector(`.main`);
+
+console.log(createMockComments(8));
 
 const filmsTemplate = createFilmsListTemplate(FilmsContainerTitle.ALL, {
   films: createFilmCardTemplate().repeat(Config.FILM_CARDS_AMOUNT),
@@ -44,5 +48,5 @@ render(filmsContainerElement, filmsTemplate);
 render(filmsContainerElement, topRatedTemplate);
 render(filmsContainerElement, mostCommentedTemplate);
 
-render(document.body, createFooterTemplate());
+render(document.body, createFooterTemplate(totalFilmsAmount));
 
