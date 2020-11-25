@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 
-import {getRandomInteger, getRandomArrayItem, getRandomArray, getRandomDate} from '../utils/common';
+import {getRandomInteger, getRandomArrayItem, getRandomArray, getRandomDate} from '../utils/randomizers';
 import {createMockComments} from './comments';
 
 const MIN_TOTAL_FILMS_AMOUNT = 100000;
@@ -110,9 +110,9 @@ const createMockFilm = () => {
     actors: getRandomArray(ACTORS),
     country: getRandomArrayItem(COUNTRIES),
     ageRating: getRandomInteger(MIN_AGE_RATING, MAX_AGE_RATING),
-    watchlist: Math.random() > 0.5,
-    alreadyWatched: Math.random() > 0.5,
-    favorite: Math.random() > 0.5,
+    isInWatchList: Math.random() > 0.5,
+    isAlreadyWatched: Math.random() > 0.5,
+    isFavorite: Math.random() > 0.5,
   };
 };
 
