@@ -3,6 +3,7 @@ import {getFormattedFilmTime, pluralize, cutText} from '../utils/common';
 const createFilmCardTemplate = (film) => {
   const {
     title,
+    poster,
     year,
     rating,
     runTime,
@@ -23,7 +24,7 @@ const createFilmCardTemplate = (film) => {
         <span class="film-card__duration">${getFormattedFilmTime(runTime)}</span>
         <span class="film-card__genre">${genres[0]}</span>
       </p>
-      <img src="./images/posters/the-dance-of-life.jpg" alt="" class="film-card__poster">
+      <img src="${poster}" alt="" class="film-card__poster">
       <p class="film-card__description">${formattedDescription}</p>
       <a class="film-card__comments">${comments.length} ${pluralizedComment}</a>
       <div class="film-card__controls">

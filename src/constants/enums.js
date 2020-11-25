@@ -6,12 +6,20 @@ const RenderPosition = {
 };
 
 const FilmsContainerTitle = {
-  'ALL': `All movies. Upcoming`,
-  'TOP_RATED': `Top rated`,
-  'MOST_COMMENTED': `Most commented`,
+  ALL: `All movies. Upcoming`,
+  TOP_RATED: `Top rated`,
+  MOST_COMMENTED: `Most commented`,
+};
+
+const SortType = {
+  DEFAULT: `default`,
+  DATE: `date`,
+  RATING: `rating`,
+  COMMENTS: `comments`,
 };
 
 export {
   RenderPosition,
   FilmsContainerTitle,
+  SortType,
 };

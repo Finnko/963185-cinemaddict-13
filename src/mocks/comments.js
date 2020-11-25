@@ -1,5 +1,5 @@
 import {v4 as uuidv4} from 'uuid';
-import {getRandomArrayItem, getRandomDate} from '../utils/common';
+import {getRandomArrayItem, getRandomDate} from '../utils/randomizers';
 
 const COMMENTS = [
   `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, minus!`,
