@@ -4,3 +4,5 @@
 
 Запуск в dev режиме `npm run start`
 
+Запуск в prod режиме `npm run prod`
+
