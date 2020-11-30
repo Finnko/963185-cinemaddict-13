@@ -18,8 +18,16 @@ const SortType = {
   COMMENTS: `comments`,
 };
 
+const filterTitlesMap = {
+  all: `All movies`,
+  watchlist: `Watchlist`,
+  history: `History`,
+  favorites: `Favorites`,
+};
+
 export {
   RenderPosition,
   FilmsContainerTitle,
   SortType,
+  filterTitlesMap,
 };

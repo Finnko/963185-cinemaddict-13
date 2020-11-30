@@ -1,5 +1,6 @@
 const createFilterMap = (films) => films.reduce((acc, item) => {
   return {
+    all: null,
     watchlist: item.isInWatchList ? ++acc.watchlist : acc.watchlist,
     history: item.isAlreadyWatched ? ++acc.history : acc.history,
     favorites: item.isFavorite ? ++acc.favorites : acc.favorites,

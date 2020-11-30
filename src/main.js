@@ -10,7 +10,7 @@ import {createFilmDetailsTemplate} from './views/film-details';
 import {createFilmCardTemplate} from './views/film-card';
 
 import {createMockFilms, totalFilmsAmount} from './mocks/films';
-import {FilmsContainerTitle, RenderPosition, SortType} from './constants/enums';
+import {FilmsContainerTitle, RenderPosition, SortType} from './constants/const';
 import {render} from './utils/common';
 import {getSortedFilms} from './utils/sort';
 import {generateFilters} from './utils/filter';
@@ -42,9 +42,9 @@ render(mainElement, createSortingTemplate());
 render(mainElement, createFilmsTemplate());
 
 const filmsContainerElement = mainElement.querySelector(`.films`);
-const filmsTemplate = createFilmsListTemplate(FilmsContainerTitle.ALL);
-const topRatedTemplate = createFilmsListTemplate(FilmsContainerTitle.TOP_RATED, true);
-const mostCommentedTemplate = createFilmsListTemplate(FilmsContainerTitle.MOST_COMMENTED, true);
+const filmsTemplate = createFilmsListTemplate(FilmsContainerTitle.ALL, false);
+const topRatedTemplate = createFilmsListTemplate(FilmsContainerTitle.TOP_RATED);
+const mostCommentedTemplate = createFilmsListTemplate(FilmsContainerTitle.MOST_COMMENTED);
 
 const renderFilms = (container, films) => {
   const title = container.querySelector(`.films-list__title`);
@@ -57,10 +57,10 @@ const renderFilms = (container, films) => {
 
     if (films.length > Config.FILM_CARDS_TO_SHOW) {
       render(container, createButtonShowMoreTemplate());
-      const loadMoreButton = container.querySelector(`.films-list__show-more`);
+      const showMoreButton = container.querySelector(`.films-list__show-more`);
       let renderedFilmsCount = Config.FILM_CARDS_TO_SHOW;
 
-      loadMoreButton.addEventListener(`click`, (evt) => {
+      showMoreButton.addEventListener(`click`, (evt) => {
         evt.preventDefault();
 
         films
@@ -70,7 +70,7 @@ const renderFilms = (container, films) => {
         renderedFilmsCount += Config.FILM_CARDS_TO_SHOW;
 
         if (renderedFilmsCount >= films.length) {
-          evt.currentTarget.remove();
+          showMoreButton.remove();
         }
       });
     }
@@ -85,10 +85,10 @@ render(filmsContainerElement, mostCommentedTemplate);
 
 const filmsContainers = filmsContainerElement.querySelectorAll(`.films-list`);
 
-filmsContainers.forEach((item, idx) => {
-  renderFilms(item, filmsDataMap[idx]);
+filmsContainers.forEach((item, index) => {
+  renderFilms(item, filmsDataMap[index]);
 });
 
 render(document.body, createFooterTemplate(totalFilmsAmount));
 // temp
-render(document.body, createFilmDetailsTemplate(filmsData[0]));
+//render(document.body, createFilmDetailsTemplate(filmsData[0]));
