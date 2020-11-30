@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import {RenderPosition} from '../constants/enums';
+import {RenderPosition} from '../constants/const';
 import {Config} from '../constants/config';
 
 const render = (container, template, place = RenderPosition.BEFORE_END) => {

@@ -24,6 +24,7 @@
   "dependencies": {
     "apexcharts": "3.22.2",
     "dayjs": "1.9.5",
+    "dayjs-random": "1.0.0",
     "flatpickr": "4.6.6",
     "he": "1.2.0",
     "uuid": "8.3.1"

@@ -1,5 +1,10 @@
 import {v4 as uuidv4} from 'uuid';
-import {getRandomArrayItem, getRandomDate} from '../utils/randomizers';
+import dayjs from 'dayjs';
+import dayjsRandom from 'dayjs-random';
+
+import {getRandomArrayItem} from '../utils/randomizers';
+
+dayjs.extend(dayjsRandom);
 
 const COMMENTS = [
   `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, minus!`,
@@ -20,7 +25,7 @@ const createMockComment = () => {
     emotion: getRandomArrayItem(EMOTIONS),
     author: getRandomArrayItem(USERS),
     text: getRandomArrayItem(COMMENTS),
-    date: getRandomDate()
+    date: dayjs.past()
   };
 };
 
