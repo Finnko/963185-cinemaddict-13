@@ -21,4 +21,10 @@ npm run start
 npm run prod
 ```
 
-[Онлайн демо](https://vercel.com/).
+### Author
+
+**Alexey Khabirov**
+
+* Github: [@Finnko](https://github.com/Finnko)
+
+[Online demo](https://vercel.com/)
