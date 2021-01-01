@@ -1,6 +1,8 @@
 ---
 
-## Проект онлайн кинотеатра vanilla js 
+## Проект онлайн кинотеатра Cinemaddict
+
+**Technologies used:** JavaScript (ES6), Webpack, Day.js, Apexcharts.js.
 
 Установка зависимостей `npm i`
 
