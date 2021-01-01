@@ -10,8 +10,15 @@
 npm i
 ```
 
-Запуск в dev режиме `npm run start`
+Запуск в dev режиме
 
-Запуск в prod режиме `npm run prod`
+```sh
+npm run start
+```
+
+Запуск в prod режиме
+```sh
+npm run prod
+```
 
 [Онлайн демо](https://vercel.com/).
