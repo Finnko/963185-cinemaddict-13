@@ -1,29 +1,28 @@
 ---
 
-## Проект онлайн кинотеатра Cinemaddict
+## Cinemaddict - online movie app
 
 **Technologies used:** JavaScript (ES6), Webpack, Day.js, Apexcharts.js.
 
-Установка зависимостей
+Install deps
 
 ```sh
 npm i
 ```
 
-Запуск в dev режиме
+Run dev mode
 
 ```sh
 npm run start
 ```
 
-Запуск в prod режиме
+Run prod mode
+
 ```sh
 npm run prod
 ```
 
-### Author
-
-**Alexey Khabirov**
+Author: **Alexey Khabirov**
 
 * Github: [@Finnko](https://github.com/Finnko)
 
