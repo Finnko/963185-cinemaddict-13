@@ -4,7 +4,11 @@
 
 **Technologies used:** JavaScript (ES6), Webpack, Day.js, Apexcharts.js.
 
-Установка зависимостей `npm i`
+Установка зависимостей
+
+```sh
+npm i
+```
 
 Запуск в dev режиме `npm run start`
 
