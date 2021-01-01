@@ -90,5 +90,4 @@ filmsContainers.forEach((item, index) => {
 });
 
 render(document.body, createFooterTemplate(totalFilmsAmount));
-// temp
 render(document.body, createFilmDetailsTemplate(filmsData[0]));
